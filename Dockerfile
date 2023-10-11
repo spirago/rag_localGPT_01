@@ -1,6 +1,8 @@
 # syntax=docker/dockerfile:1
-# Build as `docker build . -t localgpt`, requires BuildKit.
-# Run as `docker run -it --mount src="$HOME/.cache",target=/root/.cache,type=bind --gpus=all localgpt`, requires Nvidia container toolkit.
+# Build as `docker build . -t spirago/rag_localgpt_cuda`
+# docker build . -t spirago/rag_localgpt_cuda
+# Push to DockerHuB `docker push spirago/rag_localgpt_cuda`
+# Run as `docker run -it --gpus=all spirago/rag_localgpt_cuda`, requires Nvidia container toolkit.
 
 FROM nvidia/cuda:11.7.1-runtime-ubuntu22.04
 RUN apt-get update && apt-get install -y software-properties-common
