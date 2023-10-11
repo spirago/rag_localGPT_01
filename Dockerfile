@@ -5,6 +5,7 @@
 FROM nvidia/cuda:11.7.1-runtime-ubuntu22.04
 RUN apt-get update && apt-get install -y software-properties-common
 RUN apt-get install -y g++-11 make python3 python-is-python3 pip
+RUN apt-get install -y openssh-server
 # only copy what's needed at every step to optimize layer cache
 COPY ./requirements.txt .
 # use BuildKit cache mount to drastically reduce redownloading from pip on repeated builds
