@@ -19,3 +19,8 @@ COPY ingest.py constants.py ./
 COPY . .
 # ENV device_type=cuda
 # CMD python run_localGPT.py --device_type $device_type
+
+# # # The command that will be run when the container starts
+ADD start.sh /
+RUN chmod +x /start.sh
+CMD ["/start.sh"]
