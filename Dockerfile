@@ -10,7 +10,8 @@ RUN apt-get install -y g++-11 make python3 python-is-python3 pip
 RUN apt-get install -y openssh-server
 # only copy what's needed at every step to optimize layer cache
 COPY ./requirements.txt .
-# use BuildKit cache mount to drastically reduce redownloading from pip on repeated builds
+# we can use BuildKit cache mount to drastically reduce redownloading from pip on repeated builds
+# RUN --mount=type=cache,target=/root/.cache CMAKE_ARGS="-DLLAMA_CUBLAS=on" FORCE_CMAKE=1 pip install --timeout 100 -r requirements.txt llama-cpp-python==0.1.83
 RUN CMAKE_ARGS="-DLLAMA_CUBLAS=on" FORCE_CMAKE=1 pip install --timeout 100 -r requirements.txt llama-cpp-python==0.1.83
 COPY SOURCE_DOCUMENTS ./SOURCE_DOCUMENTS
 COPY ingest.py constants.py ./
@@ -18,6 +19,7 @@ COPY ingest.py constants.py ./
 # See <https://github.com/moby/buildkit/issues/1436>.
 # If this changes in the future you can `docker build --build-arg device_type=cuda  . -t localgpt` (+GPU argument to be determined).
 # ARG device_type=cpu
+# RUN --mount=type=cache,target=/root/.cache python ingest.py --device_type $device_type
 # RUN python ingest.py --device_type $device_type
 COPY . .
 # ENV device_type=cuda
