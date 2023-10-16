@@ -14,7 +14,7 @@ COPY ./requirements.txt .
 # LocalGPT uses LlamaCpp-Python for GGML (you will need llama-cpp-python <=0.1.76) and GGUF (llama-cpp-python >=0.1.83) models.
 # we can use BuildKit cache mount to drastically reduce redownloading from pip on repeated builds
 # RUN --mount=type=cache,target=/root/.cache CMAKE_ARGS="-DLLAMA_CUBLAS=on" FORCE_CMAKE=1 pip install --timeout 100 -r requirements.txt llama-cpp-python==0.1.83
-RUN CMAKE_ARGS="-DLLAMA_CUBLAS=on" FORCE_CMAKE=1 pip install --timeout 100 -r requirements.txt llama-cpp-python==0.1.76
+RUN CMAKE_ARGS="-DLLAMA_CUBLAS=on" FORCE_CMAKE=1 pip install --timeout 100 -r requirements.txt llama-cpp-python==0.1.83
 COPY SOURCE_DOCUMENTS ./SOURCE_DOCUMENTS
 COPY ingest.py constants.py ./
 # Docker BuildKit does not support GPU during *docker build* time right now, only during *docker run*.
