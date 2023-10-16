@@ -14,5 +14,5 @@ then
 fi
 
 # python ingest.py (--device_type cpu)
-# python run_localGPT.py --show_sources (--device_type cpu/mps)
+# python run_localGPT.py --show_sources (--device_type cpu/mps --use_history)
 sleep infinity
