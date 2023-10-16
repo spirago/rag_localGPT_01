@@ -18,9 +18,9 @@ COPY ingest.py constants.py ./
 # Docker BuildKit does not support GPU during *docker build* time right now, only during *docker run*.
 # See <https://github.com/moby/buildkit/issues/1436>.
 # If this changes in the future you can `docker build --build-arg device_type=cuda  . -t localgpt` (+GPU argument to be determined).
-# ARG device_type=cpu
 # RUN --mount=type=cache,target=/root/.cache python ingest.py --device_type $device_type
-# RUN python ingest.py --device_type $device_type
+ARG device_type=cpu
+RUN python ingest.py --device_type $device_type
 COPY . .
 # ENV device_type=cuda
 # CMD python run_localGPT.py --device_type $device_type
