@@ -98,8 +98,8 @@ EMBEDDING_MODEL_NAME = "hkunlp/instructor-xl" # Uses 5 GB of VRAM (Most Accurate
 # MODEL_ID = "TheBloke/Llama-2-13b-Chat-GGUF"
 # MODEL_BASENAME = "llama-2-13b-chat.Q4_K_M.gguf"
 
-MODEL_ID = "TheBloke/Llama-2-7b-Chat-GGUF"
-MODEL_BASENAME = "llama-2-7b-chat.Q4_K_M.gguf"
+# MODEL_ID = "TheBloke/Llama-2-7b-Chat-GGUF"
+# MODEL_BASENAME = "llama-2-7b-chat.Q4_K_M.gguf"
 
 # MODEL_ID = "TheBloke/Mistral-7B-Instruct-v0.1-GGUF"
 # MODEL_BASENAME = "mistral-7b-instruct-v0.1.Q8_0.gguf"
@@ -146,8 +146,8 @@ MODEL_BASENAME = "llama-2-7b-chat.Q4_K_M.gguf"
 # MODEL_BASENAME = "model.safetensors"
 # MODEL_ID = "TheBloke/Nous-Hermes-13B-GPTQ"
 # MODEL_BASENAME = "nous-hermes-13b-GPTQ-4bit-128g.no-act.order"
-# MODEL_ID = "TheBloke/WizardLM-13B-V1.2-GPTQ"
-# MODEL_BASENAME = "gptq_model-4bit-128g.safetensors
+MODEL_ID = "TheBloke/WizardLM-13B-V1.2-GPTQ"
+MODEL_BASENAME = "model.safetensors"
 
 ### 30b GPTQ Models for 24GB GPUs (*** Requires using intfloat/e5-base-v2 instead of hkunlp/instructor-large as embedding model ***)
 # MODEL_ID = "TheBloke/Wizard-Vicuna-30B-Uncensored-GPTQ"
