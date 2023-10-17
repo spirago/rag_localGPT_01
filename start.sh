@@ -13,6 +13,8 @@ then
     service ssh start
 fi
 
+python run_localGPT_API.py
+python /localGPTUI/localGPTUI.py
 # python ingest.py (--device_type cpu)
 # python run_localGPT.py --show_sources (--device_type cpu/mps --use_history)
 sleep infinity
