@@ -1,0 +1,8 @@
+version: '1.0.0'
+services:
+  - name: 'service1'
+    port: 5111
+    proxy_port: 5111
+  - name: 'service2'
+    port: 5110
+    proxy_port: 5110ß
