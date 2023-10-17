@@ -16,6 +16,8 @@ COPY ./requirements.txt .
 # RUN --mount=type=cache,target=/root/.cache CMAKE_ARGS="-DLLAMA_CUBLAS=on" FORCE_CMAKE=1 pip install --timeout 100 -r requirements.txt llama-cpp-python==0.1.83
 RUN CMAKE_ARGS="-DLLAMA_CUBLAS=on" FORCE_CMAKE=1 pip install --timeout 100 -r requirements.txt llama-cpp-python==0.1.83
 COPY SOURCE_DOCUMENTS ./SOURCE_DOCUMENTS
+COPY localGPTUI ./localGPTUI
+COPY localGPTUI_DEV ./localGPTUI_DEV
 COPY ingest.py constants.py ./
 # Docker BuildKit does not support GPU during *docker build* time right now, only during *docker run*.
 # See <https://github.com/moby/buildkit/issues/1436>.
