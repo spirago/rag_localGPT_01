@@ -19,6 +19,7 @@ COPY SOURCE_DOCUMENTS ./SOURCE_DOCUMENTS
 COPY localGPTUI ./localGPTUI
 COPY localGPTUI_DEV ./localGPTUI_DEV
 COPY ingest.py constants.py ./
+COPY runpod.yaml ./
 # Docker BuildKit does not support GPU during *docker build* time right now, only during *docker run*.
 # See <https://github.com/moby/buildkit/issues/1436>.
 # If this changes in the future you can `docker build --build-arg device_type=cuda  . -t localgpt` (+GPU argument to be determined).
