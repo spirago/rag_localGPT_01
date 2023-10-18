@@ -12,8 +12,8 @@ then
     cd /
     service ssh start
 fi
-
-nohup python run_localGPT_API.py &
+cd /rag_localgpt_01
+nohup python ./run_localGPT_API.py &
 nohup python ./localGPTUI/localGPTUI.py
 # python ingest.py (--device_type cpu)
 # python run_localGPT.py --show_sources (--device_type cpu/mps --use_history)
