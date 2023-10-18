@@ -17,4 +17,4 @@ RUN pip install --timeout 100 -r /rag_localgpt_01/requirements.txt llama-cpp-pyt
 EXPOSE 5111
 EXPOSE 5110
 RUN chmod +x /rag_localgpt_01/start.sh
-CMD ["/rag_localgpt/start.sh"]
+CMD ["/rag_localgpt_01/start.sh"]
